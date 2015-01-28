@@ -1,0 +1,25 @@
+Informationen ueber die Easy License System API
+
+Pruefen ob die HWID mit einer Lizenz verbunden ist:
+#url#?a=canuse&hwid=<hwid>&product=<product>
+
+Ausgabe:
+TRUE    - HWID wurde registriert
+FALSE   - HWID wurde nicht registriert
+
+Pruefe ob die Lizenz noch gueltig ist (Datum):
+#url#?a=checkdate&hwid=<hwid>
+
+Ausgabe:
+<product>Date:<product>
+
+Registrieren und den Key mit der HWID und dem Produkt verbinden:
+#url#?a=register&key=<key>&hwid=<hwid>&product=<product>
+
+Ausgabe:
+error: wrong hwid              - HWID fehlt
+error: wrong key               - Key fehlt oder existiert nicht
+error: key is already in use   - Key wurde schon benutzt
+FALSE                          - Registrierung abgeschlossen error ist nun 'already in use'
+
+Fuer weitere Informationen schau dir das C# Programm an.
