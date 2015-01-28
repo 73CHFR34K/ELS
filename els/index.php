@@ -158,7 +158,8 @@ $doc = '<!DOCTYPE html>
 		</div>
 		<div id="footerWrapper">
 			<div class="left" style="padding: 5px;">
-				Entwickelt und designt von: <a href="http://www.elitepvpers.com/forum/members/2342603-shawak.html">Shawak</a> & <a href="http://www.elitepvpers.com/forum/members/4790379-kusatsu.html">Kusatsu</a><br/>
+				Entwickelt und designt von: Shawak & Kusatsu<br/>
+				Das dunkle Theme wurde von Xunil eingebaut !<br />
 				Schaue dir <a href="?s=about">about</a> an f&uuml;r Informationen.<br/>
 			</div>
 		
