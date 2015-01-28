@@ -16,9 +16,9 @@
 	//phpinfo();
 	
 	// Start Sessions
-	/*session_cache_limiter("private");
-	session_cache_expire(30); // Minuten
-	session_start();*/
+	session_cache_limiter("private");
+	session_cache_expire(30);
+	session_start();
 	
 	// API
 	function booltostr($bool) {
@@ -202,10 +202,8 @@ $doc = '<!DOCTYPE html>
 	// Generate Page title
 	$title = $pageTitle.' - '.$config['page']['title'];
 	$doc = str_replace('_#title#_', $title, $doc);
-	
 	// Disconnect from MySql
 	mysqlclose();
-	
 	// Calculate Time
 	$time = microtime();
 	$time = explode(' ', $time);
@@ -213,8 +211,6 @@ $doc = '<!DOCTYPE html>
 	$finish = $time;
 	$total_time = round(($finish - $start), 4);
 	$doc = str_replace('_#totalTime#_', $total_time, $doc);
-		
 	// Show website
-	echo $doc;
-	
+	echo $doc;	
 ?>
