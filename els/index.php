@@ -158,8 +158,6 @@ $doc = '<!DOCTYPE html>
 		</div>
 		<div id="footerWrapper">
 			<div class="left" style="padding: 5px;">
-				Entwickelt und designt von: Shawak & Kusatsu<br/>
-				Das dunkle Theme wurde von Xunil eingebaut !<br />
 				Schaue dir <a href="?s=about">about</a> an f&uuml;r Informationen.<br/>
 			</div>
 		
