@@ -33,12 +33,16 @@
 	
 	function generateKey() {
 		global $config;
-		$letters = "abcdefghijklmnopqrstuvwxyz0123456789";
+		$letters = "0123456789";
+		$letters2 = "abcdefghijklmnopqrstuvwxyz1234567890";
 		$code = "";
 		for($i=0; $i<strlen($config['key']['shema']); $i++) {
 			switch($config['key']['shema'][$i]) {
 				case "D":
 					$code.= $letters[rand(0, strlen($letters)-1)];
+					break;
+				case "E":
+					$code.= $letters2[rand(0, strlen($letters)-1)];
 					break;
 				default:
 					$code.=$config['key']['shema'][$i];
