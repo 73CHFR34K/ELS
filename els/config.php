@@ -17,7 +17,7 @@
 	$config['account']['salt'] = "iamasalt";
 	
 	// Key
-	$config['key']['shema'] = "DDDD-DDDD-DDDD"; // D = Random Letter
+	$config['key']['shema'] = "DDDDDDDDDD-DDDDDD-DDDDDD-DDDDDDDDDD"; // D = Random Letter
 	
 	// Other
 	$config['users']['perPage'] = 25;
