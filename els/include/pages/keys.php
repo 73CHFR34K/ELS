@@ -10,11 +10,10 @@
 	if($page>$pages&&$pages!=0) {
 		index("?s=".$s."&page=".$pages);
 	}
-			
-	if(count($keys)==0) { $doc.='
-		<div style="padding: 5px;">There are no keys.</div>
-	'; } else {
 	
+	//If we have 0 or 1 and more keys it will be show us the keys all :) Fixx !
+	if(count($keys)!=0||count($keys)!=1) { 
+
 	$doc.='
 	
 	<style>
@@ -93,11 +92,10 @@
 
 	<div id="content">
 		<form action="?s='.$s.'&page='.$page.'" method="post">
-
-Lizenzgültigkeit in Tagen:
+			LizenzgÃ¼ltigkeit in Tagen:
 			<input type="text" name = "txtDate" class="textbox" value="30">
 			<input type="text" style="display: none;" name="action" value="addkey"></input>
-			<input class="right pointer" type="submit" value="Key hinzufügen"></input>
+			<input class="right pointer" type="submit" value="Key hinzufÃ¼gen"></input>
 			<div class="clear"></div>
 		</form>
 		
@@ -119,8 +117,7 @@ Lizenzgültigkeit in Tagen:
 			</div>
 			
 			<div class="clear"></div>
-		</div>
-		';
+		</div>';
 
 		$color = false;
 		for($i=$config['keys']['perPage']*($page-1); $i<=$config['keys']['perPage']*($page)-1; $i++) { if($i>=count($keys)) { break; } $doc.='
@@ -141,21 +138,24 @@ Lizenzgültigkeit in Tagen:
 					<img class="left pointer submitFormDelete" src="grafik/images/remove.png" alt="'.$keys[$i]['id'].'" title="Delete"></img>
 				</div>
 				<div class="clear"></div>
-			</div>
-		'; if(!$color) { $color = true; } else { $color = false; } } $doc.='
+			</div>'; 
+			
+		if(!$color) { $color = true; } else { $color = false; } } $doc.='
 		
 		<form id="form" action="?s='.$s.'&page='.$page.'" method="post">
 			<input type="text" style="display: none;" name="action" value=""></input>
 			<input type="text" style="display: none;" name="id" value=""></input>
-		</form>
+		</form>';
 		
-		'; if($pages!=1) { $doc.='
-			<div style="padding-top: 20px">
-				<div class="left" style="width: 80px; min-height: 1px;">
-					'; if($page!=1) { $doc.='
-						<a href="?s='.$s.'&page='.($page-1).'">previous</a>
-					'; } $doc.='
-				</div>
+		if($pages!=1) { 
+			$doc.='<div style="padding-top: 20px">
+				<div class="left" style="width: 80px; min-height: 1px;">'; 
+				
+				if($page!=1) { 
+				$doc.='<a href="?s='.$s.'&page='.($page-1).'">previous</a>';
+				} 
+				
+				$doc.='</div>
 				<div class="left" style="width: 580px; min-height: 1px; text-align: center;">
 					Page: '.$page.'/'.$pages.'
 				</div>
@@ -165,14 +165,9 @@ Lizenzgültigkeit in Tagen:
 					'; } $doc.='
 				</div>
 				<div class="clear"></div>
-			</div>
-		'; } $doc.='
-		
-		
-	</div>
-	
-	';
-	
+			</div>';
+		} 
+		$doc.='</div>';
 	}
 
 ?>
